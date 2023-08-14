@@ -1,0 +1,475 @@
+
+
+:root{
+    --light-color:#111;
+    --blue: #1ea4a4;
+    --black : #333;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    border: 1rem solid rgba(0,0,0,2);
+ 
+
+}
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+    }
+    html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        scroll-padding-top: 6rem;
+    
+    }
+    body{
+        background:var(--blue);
+        
+    }
+
+    
+    .btn{
+        margin-top: 1rem;
+        display: inline-block;
+        background: #154957;
+        color: #fff;
+        border-radius: 5rem;
+        padding: 1rem 3rem;
+        cursor: pointer;
+        font-size: 1.7rem;
+    }
+    .btn:hover{
+        background: var(--blue);
+    }
+
+h1  {
+   
+    font-family:'Times New Roman', Times, serif;
+    font-size: 3em;
+    color: #060505;
+}
+
+p {
+    line-height: 1.6em;
+    font-size: medium;
+    color: #eee;
+}
+
+main {
+    margin: 10vh 1em 10vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+section {
+    display: grid;
+    border-radius: .5rem;
+    grid-template-columns: 1fr;
+    gap:1.5rem;
+    /* background: #a1b9bd; */
+
+
+}
+
+/* Header Styles */
+.header{
+
+    position: relative;
+    top: 0;
+    right: 100%;
+    left: 0;
+    z-index: 1000;
+    background:#154957;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    transition: 0.3s;
+}
+.header .navigation-menu.active{
+    display: block;
+}
+
+
+.header .logo{
+    display: block;
+color: #f7f7f7; 
+font-size: 2.5rem;
+margin-right: auto;
+
+}
+
+/* icons style*/
+.header .icons i{
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    color: var(--black);
+    background: #eee;
+    border-radius: .5%;
+    margin-left: .7rem;
+    font-size: 1.7rem;
+    cursor:pointer;
+    
+
+
+}
+.header .icons i:hover{
+    color: #fff;
+    background: var(--blue);
+
+}
+
+.header .search-form{
+    position: absolute;
+    background: #fff;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    box-shadow:var(--box-shadow);
+    top:110%;
+    right: 7%;
+    height: 6rem;
+    width: 50rem;
+    padding: 1rem;
+    display: none;
+}
+
+.header .search-form #search-box{
+    width: 100%;
+    border: var(--border);
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    height: 100%;
+}
+
+.header .search-form.active{
+    display: flex;
+}
+
+.header .search-form label{
+    font-size: 2rem;
+    padding-left: 1rem;
+    padding-right: .5rem;
+    cursor: pointer;
+    color: var(--black);
+
+}
+.header .search-form label:hover{
+    color: var(--blue);
+}
+
+#menu-bars{
+    display: none;
+}
+
+
+/* Navigation Styles*/
+
+.navigation-menu ul {
+    display: flex;
+    justify-content:center ;
+    align-items:center;
+    flex-direction: row;
+    z-index: 1;
+    transition: 0.5s;
+
+}
+
+.navigation-menu li {
+    list-style-type: none;
+}
+.navigation-menu li::before {
+    color: #059372;
+    text-decoration: none;
+    display: block;
+    padding:40px 25px;
+    font-size: 18px;
+    line-height: 1.5px;
+    transition: 0.3s;
+}
+
+.navigation-menu .link {
+    display: block;
+    padding: 1em;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #ffffff;
+}
+.activeBtn{
+    display: block;
+    background: #051440;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--blue) !important;
+}
+
+.navigation-menu .link:hover {
+   
+    color:var(--blue);
+    transition: ease 0.3s all;
+}
+.sticky {
+    position: fixed;
+    top:0;
+    width: 100%;
+    left: 0;
+    right: 10;
+  }
+
+ .sticky + .content {
+    padding-top: 60px;
+ }
+
+/* Footer Styles */
+.footer{
+    display: flex;
+    align-items: center;
+   justify-content: space-between;
+   margin: 0%;
+   padding: 0%;
+}
+
+
+#returnTop{
+    position: relative;
+    left: 89%;
+    bottom: 7%;
+    background-color: transparent;
+    width: 0 ;
+    height: 0;
+    border: 18px solid transparent;
+    border-bottom-color: var(--black);
+    cursor: pointer;
+    animation-name:arrow;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-out; 
+    transition: ease 0.5s;
+}
+
+#returnTop::before{
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0 ;
+    right: 0;
+    top: 0;
+    border: 22px solid transparent;
+    border-bottom-color: #051440;
+    transform: translate(50%, -30px);
+    cursor: pointer;
+
+}
+
+/* Container Styles */
+.landing__container {
+    padding: 1em;
+    text-align: left;
+}
+
+
+
+section:nth-of-type(even) .landing__container {
+    margin-right: 0;
+    text-align: right;
+    margin-left: auto;
+     
+}
+
+/* Background Circles */
+/* Note that background circles are created with psuedo elements before and after */
+/* Circles appear to be random do to use of :nth-of-type psuedo class */
+section:nth-of-type(odd) .landing__container::before {
+    position: absolute;
+    content: '';
+    background: rgba(255, 255, 255, 0.187);
+    width: 20vh;
+    height: 20vh;
+    z-index: -5;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+    
+}
+
+section:nth-of-type(even) .landing__container::before {
+    position: absolute;
+    content: '';
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    right: 3em;
+    top: 3em;
+    width: 10vh;
+    height: 10vh;
+    z-index: -5;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n) .landing__container::after {
+    position: absolute;
+    content: '';
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    width: 10vh;
+    height: 10vh;
+    right: 0;
+    bottom: 0;
+    z-index: -5;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n + 1) .landing__container::after {
+    position: absolute;
+    content: '';
+    right: 20vw;
+    bottom: -5em;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    width: 15vh;
+    height: 15vh;
+    z-index: -5;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+
+
+/* Section Active Styles */
+/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+section .activeClass {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+section.activeClass .landing__container::before {
+    opacity: 1;
+    animation: rotate 4s linear 0s infinite forwards;
+}
+
+section.activeClass .landing__container::after {
+    opacity: 1;
+    animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+/* Section Active Styles Keyframe Animations */
+@keyframes rotate {
+	from {
+		transform: rotate(0deg)
+		           translate(-1em)
+		           rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg)
+		           translate(-1em) 
+		           rotate(-360deg);
+	}
+}
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+
+    }
+    .header{
+        padding: 1.5rem;
+
+    }
+    section{
+        padding:2rem 7%;
+
+    }
+    
+}
+
+@media(max-width:768px){
+#menu-bars{
+    display:inline-block ;
+}
+ .header .search-form{
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    border:var(--border);
+    width:100%;
+    border-radius:0;
+   
+ }
+   .header .navigation-menu {
+        position:absolute;
+        top: 60px;
+        right:30px;
+      left:0;
+        border-top: var(--border);
+        border-bottom: var(--border);
+        background:#154957;
+        display: none;
+     
+
+    }
+    .sticky {
+        position: fixed;
+   
+      }
+
+    .section{
+        grid-template-columns: 1fr;
+        gap:0;
+
+    }
+   
+    .footer{
+        flex-flow: column;
+        text-align: center;
+    
+}
+}
+ @media(max-width:450px){
+    html{
+        font-size: 55%;
+
+    }
+
+    
+ }
+
+@keyframes arrow{
+
+    25% { transform: translateY( -10px);
+    }
+    100% { transform: translateY(10px);
+    }
+}
+
+  
+.returnTop > a{
+    text-decoration: none;
+    font-size: 20px;
+    z-index: 8;
+    color: white;
+}
+
+@media only screen and (min-width: 35em){
+    .landing__container {
+        max-width: 50em;
+        padding: 4em;
+    }
+}
